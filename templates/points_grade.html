@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<style>
+   
+</style>
+    </head>
+    <body>
+        {%extends 'base_grade.html'%}
+        {%block content%}
+        <div id="contenuto">
+      <h1 class="list_header">Grade 9</h1>
+ 
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Math</th>
+                    <th>Biology</th>
+                    <th>Chemistry</th>
+                    <th>Physics</th>
+                </tr>
+                {%for halu in point_list%}
+            <tr>
+        <td>Name:<a href="{{halu.get_absolute_url}}">{{halu.name}}</a></td>
+       <td>Math: {{halu.math}}</td>
+       <td>Biology: {{halu.chemistry}}</td>
+        <td>Chemistry: {{halu.biology}}</td>
+        <td>Physics:{{halu.physics}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+    
+    <br>
+        </div>
+{%endblock%}
+    </body>
+</html>

@@ -1,0 +1,297 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script src="{% static 'js/jquery-3.7.1.js'%}"></script>
+        <style>
+         
+            #opt_list,#opt_create, #nav{display: none;}
+            
+
+            li{list-style-type: none;}
+            a{text-decoration: none;}
+    .opt_small{padding: .5em;}
+    .list_divider{color: white;margin-top: .5em;}
+
+#nav_small{
+display: grid;grid-template-columns: 3em 5em 5em;grid-template-rows: 4.5em;
+grid-template-areas: "menuicon cancel siteid logout"
+;
+padding-bottom: .5em;margin: -.5em -.6em 2em -.5em;
+background-color: black;
+}
+#cancel{grid-area: cancel;margin: .46em 0em 0em -2.5em;}
+#menu{grid-area: menuicon;margin-left: .5em;margin-top: .4em;margin: .4em 0em 0em .5em;}
+button{padding: 0em;background-color: black;border: none;}
+#siteid{grid-area: siteid;margin-left: -.8em;a{color: white;}}
+
+#opt{width: 17.6em;background-image: linear-gradient(90deg,black 10%, #1d252c 35%, #323e48 55%, #5b6770);
+padding-top: .5em;position: absolute;margin: -2em 0em 0em -.5em;li{padding: .7em .7em .7em 1em;text-align: start;margin-left: -2.5em;}}
+
+#out{grid-area: logout;}
+#logout{font-size: .9em;padding: .5em;width: 5em;color: white;border: 1px solid white;margin: 1.7em 0em 0em 2em;}
+.opt_small{border-bottom: 1px solid;font-size: 1em;color: white;}
+#log_in{border-bottom: 1px solid;}
+.list_header{margin-left: 4em;font-size: 1.5em;width: 5em;}
+
+#small{display: block;}
+    table{border: 1px solid;border-bottom: none;border-right: none;font-size: .8em;margin: 3em 0em 0em -.3em;}
+    td,th{border-bottom: 1px solid;border-right: 1px solid;padding: .2em;}
+  th{text-align: start;}
+
+    #big{display: none;}
+    #mark_in_detail{li{list-style-type: square;line-height: 1.6em;}
+    
+ .button_points{width: 15em;background-color: green;color: white;padding: .4em 1em;font-size: 1em;border-color: green;margin-top: 1em;}
+
+
+
+}
+@media screen and (min-width: 375px){
+    #logout{margin-left: 6em;}
+    #opt{width: 21.05em;}
+    #siteid{margin-left: 0em;}
+    .list_header{margin-left: 5em;}
+    table{margin-left: .1em;}
+    td,th{font-size: 1em;padding: .5em;}
+  
+}
+@media screen and (min-width: 425px){
+    #logout{margin-left: 9.4em;}
+    #opt{width: 24.2em;}
+    #siteid{margin-left: 1.2em;}
+   .list_header{margin-left: 6.5em;}
+   table{margin-left: .2em;}
+   td,th{padding: .5em;}
+}
+@media screen and (min-width: 768px){
+    #logout{margin-left: 84.5%;}
+    #opt{width: 20em;margin: -2em 0em 0em 30%;}
+    #siteid{margin-left: 7em;}
+    .opt_small{font-size: 1em;}
+    .list_divider{font-size: 1.2em;}
+    .list_header{margin-left: 46%;}
+    table{width: 58.5em;}
+        th{font-size: 1.2em;}
+        td{font-size: 1.1em;}
+        td,th{padding: 1em;}
+       
+       
+       
+        .button_points{width: 14.5em;}
+}
+@media screen and (min-width: 1024px){
+    #nav_small{display: none;}
+   
+     a{text-decoration: none;}
+    li{list-style-type: none;}
+    #main_nav{display: flex;flex-direction: row;margin: -2.5em 0em 0em 5em;}
+    #logout{border: none;margin-left: -.8em;background-color: black;}
+    #hello{color: white;font-size: .9em;margin: 0em 0em 0em 50%;width: auto;}
+    #log{margin: -2em 0em 0em 1.5%;}
+    #insert{width: 8em;}
+
+    #insert,#logout,#grade{font-size: .9em;color: white;a{color: white;}}
+        
+       
+    #opt_create,#opt_list{padding-top: .4em;border: 1px solid;display: block;width: 8.4em;height: 7.5em;li{padding: .5em 1em;margin-left: .3em;font-size: .8em;}
+   margin-top: 0em;background-color: black;a{color: white;}position: fixed;}
+   #opt_list{margin-left: 12.4em;}
+   #opt_create{margin-left: 5em;}
+   #opt_list,#opt_create{background-color: black;}
+    h1{font-size: 1.9em;}
+    #id{margin-top: 1.3em;a{color: white;}}
+    #nav{background-color: black;height: 5em;display: block;margin: -.5em -.5em 0em -.5em;
+     padding: 1em 0em 0em 1em;
+          }
+
+
+
+        .opt{font-size: .9em;}
+        h2{font-size: 1.8em;margin-left: 3em;}
+     
+        .list_header{margin-left: 45%;}
+        .name{font-size: 1.2em;}
+        
+    #view_list{margin-left: 1.4em;}
+    .change_form{line-height: 1.8em;margin: 3em 0em 0em 3%;}
+    ol{list-style-type: none;}
+    table{width: 70em;margin-left: 4.5em;}
+th{font-size: 1.3em;}
+        td{font-size: 1.1em;}
+        
+ #content{line-height: 1.8em;}
+ .button_points{width: 15em;}
+
+
+    }
+
+@media screen and (min-width: 1440px){
+
+            
+    #main_nav{font-size: 1.1em;margin: -2.2em 0em 0em 6em;}
+    #logout{margin-top: 2.3em;margin-left: -1.02em;margin: 2.3em 0em 0em -1.02;}
+    #hello{margin: .2em 0em 0em 63%;}
+  
+    
+    #grade{margin-left: 2em;}
+    #insert,#logout,#grade{font-size: .8em;}
+        
+       
+    #opt_create,#opt_list{li{text-align: start;}
+   margin-top: 0em;a{color: white};}
+   #opt_list{margin-left: 15.5em;}
+   #opt_create{margin-left: 6.5em;}
+   
+    h1{font-size: 2em;}
+   
+    #nav{height: 5.7em;display: block;
+          }
+          .list_header{font-size: 1.8em;}
+        .mark_in_detail{li{list-style-type: square;line-height: 1.8em;}}
+
+    table{margin: 4em 0em 0em 19%;}
+ td,th{padding: 1em;}
+ th{font-size: 1.2em;}
+ td{font-size: 1.2em;}
+ .button_points{width: 15.5em;}
+    
+   
+  
+    }
+
+</style>
+    </head>
+    <body>
+
+        <div id="nav">
+            <h1 id="id"><a href="{%url 'login' %}">Points</a></h1>
+           
+    
+           
+           <ul id="main_nav">
+            <li id="insert">  <a href="#opt_create">INSERT INFOS</a></li>
+    
+            <li id="grade"><a href="#opt_list">MARK LIST</a></li>
+        {%if user.is_authenticated%}
+            
+        <li id="hello"> Hello {{user.username}},</li>
+    
+     <li id="log" >   <form method="post" action="{%url 'logout'%}" >{%csrf_token%} 
+        <input type="submit" value="LOGOUT" id="logout">
+        </form></li>
+           
+       {%endif%}
+    
+      
+         
+           </ul>
+           </div>
+    <ol id="opt_create">
+                <a href="{%url 'create'%}">  <li class="opt">GRADE 9</li></a>
+                    
+                <a href="{%url 'create_ten'%}"> <li class="opt">GRADE 10</li></a>
+                 <a href=""><li class="opt">GRADE 11</li></a>
+                 <a href=""><li class="opt">GRADE 12</li></a></ol>
+    <ol id="opt_list">
+                    <a href="{%url 'points'%}">  <li class="opt">GRADE 9</li></a>
+                        
+                    <a href="{%url 'list_ten'%}"> <li class="opt">GRADE 10</li></a>
+                     <a href=""><li class="opt">GRADE 11</li></a>
+                     <a href=""><li class="opt">GRADE 12</li></a></ol>
+
+
+
+
+
+<div id="nav_small">
+<div id="menu">
+    <button type="submit">
+    <svg width="50" height="50" viewBox="0 0 100 50">
+    <g id='rectangles' >
+    <rect x="10" y="30" width="65" height="4" fill="white" 
+     stroke-width="2" stroke="white"/>
+    <rect x="10" y="45" width="65" height="4" fill="white" 
+     stroke-width="2" stroke="white"/>
+    <rect x="10" y="60" width="65" height="4" fill="white" 
+     stroke-width="2" stroke="white" />
+    </g>
+    </svg>
+    </button>
+    </div>
+    
+    <div id="cancel">
+    <button type="submit">
+    <svg width="50" height="50" viewBox="0 0 100 50">
+    <polygon points="20,20 60,60 " fill="white" stroke-width="2" stroke="white"/>
+    <polygon points="60,20 20,60 " fill="white" stroke-width="2" stroke="white"/>
+    </svg>
+    </button>
+    </div>
+    <h1 id="siteid"><a href="{%url 'login' %}">Points</a></h1>
+    
+ 
+    {%if user.is_authenticated%}
+                  
+                  <div id="out">
+                     <form method="post" action="{%url 'logout'%}" >{%csrf_token%} 
+                        <button type="submit" id="logout">Logout</button>
+                      
+                   </form></div>
+              
+              {%endif%}
+</div>
+                 <ol id="opt" >
+
+                  
+                       
+        <li class="list_divider">Insert infos</li>
+                        
+                       <a href="{%url 'create'%}"><li class="opt_small">grade 9</li>
+                           
+                        <a href="{%url 'create_ten'%}"><li class="opt_small">grade 10</li></a>
+                        <a href=""><li class="opt_small">grade 11</li></a>
+                        <a href=""><li class="opt_small">grade 12</li></a>
+           
+                        <li class="list_divider">Mark list</li>
+                        <a href="{% url 'points'%}"><li class="opt_small">grade 9</li>
+                           
+                            <a href="{%url 'list_ten'%}"><li class="opt_small">grade 10</li></a>
+                            <a href=""><li class="opt_small">grade 11</li></a>
+                            <a href=""><li class="opt_small">grade 12</li></a>
+               
+                        <a href="{%url 'login'%}"><li class="list_divider" id="log_in">Log in</li></a>
+                     
+                        <a href="{}">    <li class="list_divider">Sign up</li></a>
+                       
+                       </ol>
+
+        {%block content%}
+{%endblock%}  
+
+    <script>
+      $('#opt_list').css('display', 'none');
+      $('#grade').click(function(){$('#opt_list').toggle()}).click(function(){$('#opt_create').hide()})
+      $('#opt_create').css('display', 'none');
+      $('#insert').click(function(){$('#opt_create').toggle()}).click(function(){$('#opt_list').hide()});
+      $('#opt').css('display', 'none');
+$('#cancel').css('display', 'none');
+$('#menu').click(function(){$('#opt').show()})
+            .click(function(){$('#cancel').show()});
+$('#cancel').click(function(){$('#opt').hide()})
+            .click(function(){$(this).hide()});
+$('#contenuto').click(function(){$('#opt').css('display', 'none')});
+$('#contenuto').click(function(){$('#cancel').css('display', 'none')});
+$('#contenuto').click(function(){$('#opt_create').css('display', 'none')});
+$('#contenuto').click(function(){$('#opt_list').css('display', 'none')});
+$('#opt_list').mouseleave(function(){$(this).hide()});
+$('#opt_create').mouseleave(function(){$(this).hide()});
+$('a').mouseover(function(){$(this).css('text-decoration', 'underline')})
+.mouseout(function(){$(this).css('text-decoration', 'none')});
+
+        </script>
+    </body>
+</html>

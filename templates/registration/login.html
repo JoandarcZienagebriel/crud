@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<style>
+    a{text-decoration: none;}
+    
+      #out, #opt, #opt_list, #opt_create,#menu,#cancel,#nav,#siteid,#id{display: none;}
+   .content{line-height: 2.5em;margin: 4% 0em 0em 2em;}
+ .button_points{width: 15.5em;background-color: blue;color: white;padding: .4em 1em;font-size: 1em;border-color: blue;margin-top: 1.4em;}
+ 
+
+#log_header{width: 6em;margin: 0em 0em 2em 3em;font-size: 1.7em;}
+#nav_small{height: 0em;}
+  #sign_button{background-color: white;border-color: blue;color: blue}
+  p{margin-left: 4em;}
+
+  @media screen and (min-width: 375px){
+.content{margin-left: 3.5em;}
+  }
+  @media screen and (min-width: 425px){
+    .content{margin-left: 5em;}
+  }
+    @media screen and (min-width: 768px){
+ 
+      #sign_button, #login_button{width: 15.5em;}
+        #log_header{margin-left: 2.7em;}
+        .content{margin-left: 16.4em;line-height: 2.5em;}
+    }
+    
+    @media screen and (min-width: 1024px){
+
+
+ .content{margin-left: 38%;}
+ .button_points{width: 15em;}
+ #nav_small{height: 1px;}
+ #log_header{margin-left: 3em;}
+    }
+   
+      @media screen and (min-width: 1440px){
+ 
+    .content{margin: 1% 0em 0em 39%;}
+
+    #login{font-size: 1.2em;line-height: 1.8em;}
+    .button_points{padding: .4em 4.8em;font-size: 1em;margin: 2em 0em 0em .6%;}
+    p{margin-top: 1.4em;font-size: 1.1em;}
+    #sign_button{padding: .4em 4.8em;font-size: 1.1em;margin: 4em 0em 0em .5em;width: 15.3em;}
+   
+    #login_button{width: 14em;}
+    #log_header{margin-left: 3.4em;}
+    }
+</style>
+    </head>
+    <body>
+       {%extends 'base_grade.html'%}
+       {%block content%}
+<div class="content">
+        <h1 class="list_header" id="log_header">Log in</h1>
+        
+        <div id="login_content">
+       
+       
+        <form action="" method="post" id="login">{%csrf_token%}
+            {{form.as_ul}}
+            <button type="submit"  class="button_points" id="login_button"> Log in </button>
+        </form>
+
+<p><a href="{%url 'password_change'%}">Forgot password?</p>
+<a href="{%url 'signup'%}"><input type="submit" id="sign_button"  class="button_points" value="Sign up"></a>
+    </div>
+</div>
+{%endblock%}
+</body>
+    
+</html>

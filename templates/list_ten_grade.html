@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<style>
+    
+</style>
+    </head>
+    <body>
+        {%extends 'base_grade.html'%}
+        {%block content%}
+        <div id="contenuto">
+      <h1 class="list_header">Grade 10</h1>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Math</th>
+                    <th>Biology</th>
+                    <th>Chemistry</th>
+                    <th>Physics</th>
+                </tr>
+                {%for ten in gradeten_list%}
+            <tr>
+        <td>Name:<a href="{{ten.get_absolute_url}}">{{ten.name}}</a></td>
+       <td>Math: {{ten.math}}</td>
+       <td>Biology: {{ten.chemistry}}</td>
+        <td>Chemistry: {{ten.biology}}</td>
+        <td>Physics:{{ten.physics}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+    <br>
+        </div>
+{%endblock%}
+    </body>
+</html>

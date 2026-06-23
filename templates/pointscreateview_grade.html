@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<style>
+.content{line-height: 1.6em;margin-top: 4%;}
+ .button_points{width: 15em;background-color: green;color: white;padding: .4em 1em;font-size: 1em;border-color: green;margin-top: 1em;}
+ .form_points{font-size: 1em;margin: 2em 0em 0em 2%;}
+h3{font-size: 1.2em;width: 14em;margin-left: 2%;}
+#create_header{margin: 0em 0em 1.5em 2%;}
+@media screen and (min-width: 375px){
+    h3{width: 17em;}
+}
+    @media screen and (min-width: 768px){
+    .form_points{font-size: 1em;}
+    h3{width: 18em;font-size: 1.2em;margin-left: .8em;}
+       
+    }
+    
+    @media screen and (min-width: 1024px){
+
+
+        h3{font-size: 1.2em;margin-left: 2%;}
+ 
+ .form_points{margin-top: 2em;font-size: 1em;}
+ #create_header{margin-left: .7em;}
+
+    }
+    @media screen and (min-width: 1440px){
+   
+    
+    .form_points{margin-top: 2em;}
+    #create_header{margin-left: 1em;}
+
+    }
+</style>
+    </head>
+    <body>
+        {%extends 'base_grade.html'%}
+        {%block content%}
+        <div id="contenuto">
+        <div class="content">
+            <h1 class="list_header" id="create_header">Grade 9</h1>
+            <h3>Fill in your student's name and marks</h3>
+        <form action="" method="post" class="form_points">{%csrf_token%}
+            {{form.as_p}}
+            <button type="submit" class="button_points">Save</button>
+        </form>
+        </div>
+        </div>
+        {%endblock%}
+        
+    </body>
+</html>

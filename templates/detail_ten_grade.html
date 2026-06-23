@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+             #mark_in_detail{li{font-size: 1em;line-height: 1.8em;width: 12em;}height: 10em;}
+#view_list{margin-left: 1.4em;width: 15em;}
+.change{padding: .7em 1.5em;color: white;font-size: 1em;}
+
+#delete{background-color: red;border-color: red;}
+#edit{background-color: blue;border-color: blue;margin-left: 1.7em;margin-right: 1em;}
+#delete,#edit{margin-top: -.4em;}
+#detail_header{margin-left: 7%;}
+@media screen and (min-width: 375px){
+#edit{margin-left: 1.6em;}
+#mark_in_detail{li{font-size: 1.1em;line-height: 1.6em;}}
+#detail_header{margin-left: 6%;}
+}
+@media screen and (min-width: 425px){
+    #detail_header{margin-left: 5%;}
+}
+    @media screen and (min-width: 768px){
+        #mark_in_detail{li{font-size: 1em;line-height: 1.8em;}}
+        #detail_header{margin-left: .8em;}
+    }
+    
+    @media screen and (min-width: 1024px){
+        #mark_in_detail{li{line-height: 2em;}}
+#view_list{font-size: .9em;}
+#detail_header{margin-left: .7em;margin-top: 1.8em;}
+    }
+    @media screen and (min-width: 1440px){
+   
+    
+  .change{margin-top: 1em;padding: .7em 1.5em;color: white;font-size: 1em;}
+
+ 
+    }
+        
+        </style>
+    </head>
+    <body>
+        {%extends 'base_grade.html'%}
+        {%block content%}
+        <div id="contenuto">
+            <div id="content">
+                <h1 class="list_header" id="detail_header" >Grade 10</h1>
+    
+                <p id="view_list"><a href="{%url 'points'%}">View the class's entire mark list</a></p>
+    
+                <ul id="mark_in_detail">
+           <li class="name">Name: {{gradeten.name}}</li>
+           <li>Math: {{gradeten.math}}</li>
+           <li>Biology: {{gradeten.chemistry}}</li>
+            <li>Chemistry: {{gradeten.biology}}</li>
+            <li>Physics: {{gradeten.physics}}</li>
+                </ul>
+            </div>
+        {%if gradeten.author.pk == request.user.pk%}
+
+        <a href="{% url 'update_ten' gradeten.pk %}"><button type="submit" class="change" id="edit">Edit</button></a>
+        <a href="{% url 'delete_ten' gradeten.pk %}"><button type="submit" class="change" id="delete"> Delete</button></a>
+            {%endif%}
+        </div>
+       
+       
+
+{%endblock%}
+
+
+    </body>
+</html>
