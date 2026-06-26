@@ -1,0 +1,270 @@
+body {
+  line-height: 1.8rem;
+  font-family: var(--font-body);
+  background: var(--background-color);
+  color: var(--secondary-text);
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-primary);
+  color: var(--primary-text);
+  letter-spacing: 0.3px;
+}
+h1 {
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+p {
+  max-width: 600px;
+  font-size: 1rem;
+}
+li{
+    list-style-type: none;
+}
+/* =========================
+   LAYOUT
+========================= */
+.container {
+  margin: 0 auto;
+  padding: 1rem;
+  max-width: 1200px;
+}
+
+
+
+/* =========================
+   LINKS
+========================= */
+a {
+   color: #2f3e46;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: green
+}
+nav {
+  display: flex;
+  flex-direction: column;
+ 
+
+}
+
+nav a {
+  color: var(--secondary-text);
+  font-weight: 500;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+   
+    background:#fff;
+    border-bottom: 10x solid #ddd;
+    padding:1rem 5%;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+
+
+/* hamburger */
+#menu-btn{
+    border:none;
+    background:none;
+    font-size:1.8rem;
+    cursor:pointer;
+}
+
+/* =========================
+   NAV ITEMS (MOBILE FIRST)
+========================= */
+
+.nav-items{
+  
+   display: none;
+    flex-direction:column;
+    
+    margin-top:1rem;
+    width: 40%;
+}
+
+.nav-items.active{
+    display: flex;
+    
+    background:#fff;
+    padding: 0em 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow:0 0.1rem 0.75rem gray;
+   position: absolute;
+   top: 5rem;
+    right: 2rem;
+    left: auto;
+}
+
+.nav-items li {
+    text-decoration:none;
+    color:#333;
+    display:block;
+    padding:0.3rem 0;
+}
+.action-btn{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0%;
+
+}
+.nav-title{
+  font-weight: 700;
+}
+
+#user{
+  display: none;
+    font-weight:600;
+}
+
+#logout{
+    border:none;
+    background:#222;
+    color:#fff;
+    padding:0.75rem 1rem;
+    border-radius:0.25rem;
+}
+
+/* =========================
+   PAGE WRAPPER
+========================= */
+
+.card{
+    width: 80%;
+   
+    margin:2rem auto;
+}
+
+/* card only */
+.card{
+    background:#fff;
+    padding:1.5rem;
+    border-radius:0.5rem;
+    box-shadow:0 0.125rem 0.75rem rgba(0,0,0,0.08);
+}
+
+/* spacing inside */
+
+
+/* =========================
+   FORMS
+========================= */
+
+
+
+form{
+  padding: 1rem;
+}
+
+.form_points input,
+.form_points select,
+.form_points textarea{
+    width: 100%;
+    padding:0.75rem;
+    border: 1px solid #ccc;
+    border-radius:0.25rem;
+}
+
+/* buttons */
+.btn,
+.button_points{
+    border:none;
+    background:#222;
+    color:#fff;
+    padding:0.75rem 1.25rem;
+    border-radius:0.25rem;
+    cursor:pointer;
+    margin-top: 1rem;
+    
+}
+
+#delete,
+.danger{
+    background:#d9534f;
+}
+
+/* =========================
+   TABLES (CRITICAL PART)
+========================= */
+
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td{
+  padding: .5rem;
+    border: 1px solid #ddd;
+    text-align:left;
+    white-space: nowrap;
+}
+
+
+th{
+    background:#222;
+    color:#fff;
+}
+
+/* =========================
+   DETAIL LIST
+========================= */
+
+
+
+.card ul li{
+    padding:0.75rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+
+
+
+/* =========================
+   RESPONSIVE BREAKPOINTS
+========================= */
+
+/* DESKTOP */
+@media screen and (min-width: 768px){
+
+   
+#user{
+  display: block;
+}
+  
+    .card{
+      width: 40%;
+    }
+}
+

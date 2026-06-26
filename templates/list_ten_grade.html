@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-<style>
-    
-</style>
-    </head>
-    <body>
+
         {%extends 'base_grade.html'%}
         {%block content%}
-        <div id="contenuto">
-      <h1 class="list_header">Grade 10</h1>
+        <div >
+      <h2>Grade 10 Marks</h2>
+ <div class="table-wrapper">
             <table>
+                <thead>
                 <tr>
                     <th>Name</th>
                     <th>Math</th>
@@ -18,18 +13,22 @@
                     <th>Chemistry</th>
                     <th>Physics</th>
                 </tr>
-                {%for ten in gradeten_list%}
-            <tr>
-        <td>Name:<a href="{{ten.get_absolute_url}}">{{ten.name}}</a></td>
-       <td>Math: {{ten.math}}</td>
-       <td>Biology: {{ten.chemistry}}</td>
-        <td>Chemistry: {{ten.biology}}</td>
-        <td>Physics:{{ten.physics}}</td>
+                </thead>
+                <tbody>
+                {%for halu in gradeten_list%}
+            <tr class="grade">
+        <td>Name:<a href="{{halu.get_absolute_url}}"> {{halu.name}}</a></td>
+       <td>Math: {{halu.math}}</td>
+       <td>Biology: {{halu.chemistry}}</td>
+        <td>Chemistry: {{halu.biology}}</td>
+        <td>Physics:{{halu.physics}}</td>
         </tr>
         {%endfor%}
+        </tbody>
     </table>
+    </div>
     <br>
         </div>
 {%endblock%}
-    </body>
-</html>
+
+   
