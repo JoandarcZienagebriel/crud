@@ -18,7 +18,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-dev-key')  # must be 
 DEBUG = True
 
 # ALLOWED_HOSTS read from environment variable, fallback to Render URL
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    ".vercel.app",
+    "localhost",
+    "127.0.0.1"
+]
 
 
 
@@ -77,12 +81,10 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 # DATABASE (PostgreSQL recommended for Render)
 # --------------------------
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / "db.sqlite3",
-    }
+    'default': dj_database_url.config(
+        default=os.environ.get("DATABASE_URL", "sqlite:///db.sqlite3")
+    )
 }
-
 
 # --------------------------
 # PASSWORD VALIDATION
