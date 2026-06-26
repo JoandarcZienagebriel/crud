@@ -17,11 +17,11 @@
                 <tbody>
                 {%for halu in point_list%}
             <tr class="grade">
-        <td>Name:<a href="{{halu.get_absolute_url}}"> {{halu.name}}</a></td>
-       <td>Math: {{halu.math}}</td>
-       <td>Biology: {{halu.chemistry}}</td>
-        <td>Chemistry: {{halu.biology}}</td>
-        <td>Physics:{{halu.physics}}</td>
+        <td><a href="{{halu.get_absolute_url}}"> {{halu.name}}</a></td>
+       <td>{{halu.math}}</td>
+       <td>{{halu.chemistry}}</td>
+        <td>{{halu.biology}}</td>
+        <td>{{halu.physics}}</td>
         </tr>
         {%endfor%}
         </tbody>
